@@ -1,7 +1,10 @@
-var express = require("express"), 
-	exphbs  = require("express-handlebars");
+var express  = require("express"), 
+	exphbs   = require("express-handlebars"),
+	http     = require("http");
 
-var app = express();
+var app = express(), 
+	server = http.createServer(app),
+	io = require("socket.io").listen(server);
 
 app.use(express.static('public'));
 
@@ -19,7 +22,7 @@ app.post("/", function (req, res) {
 		id += chars[Math.floor(Math.random()*chars.length)]
 	}
 
-	res.redirect(id);
+	res.redirect(id + "/player");
 });
 
 app.get("/:boardId", function (req, res) {
@@ -27,9 +30,24 @@ app.get("/:boardId", function (req, res) {
 });
 
 app.get("/:boardId/player", function (req, res) {
-	res.render("player");
+	res.render("player", {board: req.params.boardId});
 });
 
-app.listen(3000, function() {
+server.listen(3000, function() {
 	console.log("Listening on port 3000")
+});
+
+
+
+io.on("connection", function (socket) {
+
+	socket.on("player", function(id) {
+		console.log("Socket " + socket.id + " registered as player for board " + id);
+		socket.join(id);
+	});
+	socket.on("play", function(board, sound) {
+		console.log("Socket " + socket.id + " sent sound " + sound + " for board " + id);
+		io.to(board).emit("play", sound);
+	});
+
 });

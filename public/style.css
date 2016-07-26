@@ -1,0 +1,19 @@
+.board-id {
+	background-color: #CCC;
+	width: 200px;
+	margin: 0 auto;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	position: relative;
+	padding: 0 10px;
+	text-align: center;
+}
+.board-id-label {
+	text-transform: uppercase;
+	color: #666;
+	font-weight: bold;
+	font-size: 20px;
+}
+.board-id-text {
+	font-size: 40px;
+}
