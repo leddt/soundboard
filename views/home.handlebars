@@ -1,0 +1,36 @@
+<div class="text-center">
+  <h1>Soundboard</h1>
+
+  <div class="row">
+    <div class="col-sm-4 col-sm-push-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <form method="POST">
+            <button type="submit" class="btn btn-primary btn-lg">Create a new board</button>
+          </form>
+
+          <p class="help-block">This device will play sounds.</p>
+
+          <hr />
+          
+          <h2>Join existing board</h2>
+
+          <form id="join">
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" placeholder="Board ID" />
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-success">Join</button>
+              </span>
+            </div>
+          </form>
+
+          <p class="help-block">This device will choose which sounds to play.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="home.js"></script>
