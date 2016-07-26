@@ -12,6 +12,16 @@ app.get("/", function (req, res) {
 	res.render("home");
 });
 
+app.post("/", function (req, res) {
+	var chars = "ABCDFGHJKLMNPQRSTVWXZ0123456789";
+	var id = "/";
+	for (var i = 0; i < 6; i++) {
+		id += chars[Math.floor(Math.random()*chars.length)]
+	}
+
+	res.redirect(id);
+});
+
 app.get("/:boardId", function (req, res) {
 	res.render("board");
 });
