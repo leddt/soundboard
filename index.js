@@ -26,7 +26,7 @@ app.post("/", function (req, res) {
 });
 
 app.get("/:boardId", function (req, res) {
-	res.render("board");
+	res.render("board", {board: req.params.boardId});
 });
 
 app.get("/:boardId/player", function (req, res) {
@@ -46,7 +46,7 @@ io.on("connection", function (socket) {
 		socket.join(id);
 	});
 	socket.on("play", function(board, sound) {
-		console.log("Socket " + socket.id + " sent sound " + sound + " for board " + id);
+		console.log("Socket " + socket.id + " sent sound " + sound + " for board " + board);
 		io.to(board).emit("play", sound);
 	});
 
