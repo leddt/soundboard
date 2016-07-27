@@ -1,4 +1,6 @@
 .board-id {
+	display: block;
+	color: #000;
 	background-color: #CCC;
 	width: 200px;
 	margin: 0 auto;
@@ -7,6 +9,7 @@
 	position: relative;
 	padding: 0 10px;
 	text-align: center;
+	text-decoration: none !important;
 }
 .board-id-label {
 	text-transform: uppercase;
