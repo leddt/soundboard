@@ -6,31 +6,47 @@ var app = express(),
 	server = http.createServer(app),
 	io = require("socket.io").listen(server);
 
+var boardIdChars = "BCDFGHJKLMNPQRSTVWXZ0123456789";
+var boardIdLength = 6;
+var idPattern = new RegExp("[" + boardIdChars + "]{" + boardIdLength + "}");
+
 app.use(express.static('public'));
 
 app.engine("handlebars", exphbs({defaultLayout:"layout"}));
 app.set("view engine", "handlebars")
 
 app.get("/", function (req, res) {
-	res.render("home");
+	var pattern = idPattern.toString();
+	res.render("home", {
+		idPattern: pattern.substr(1, pattern.length - 2)
+	});
 });
 
 app.post("/", function (req, res) {
-	var chars = "ABCDFGHJKLMNPQRSTVWXZ0123456789";
 	var id = "/";
 	for (var i = 0; i < 6; i++) {
-		id += chars[Math.floor(Math.random()*chars.length)]
+		id += boardIdChars[Math.floor(Math.random()*boardIdChars.length)]
 	}
 
 	res.redirect(id + "/player");
 });
 
-app.get("/:boardId", function (req, res) {
-	res.render("board", {board: req.params.boardId});
+app.get("/:board", function (req, res) {
+	if (!isValidBoardId(req.params.board)) {
+		res.send("Invalid board ID");
+		return;
+	}
+
+	res.render("board", {board: req.params.board});
 });
 
-app.get("/:boardId/player", function (req, res) {
-	res.render("player", {board: req.params.boardId});
+app.get("/:board/player", function (req, res) {
+	if (!isValidBoardId(req.params.board)) {
+		res.send("Invalid board ID");
+		return;
+	}
+
+	res.render("player", {board: req.params.board});
 });
 
 var port = process.env.PORT || 3000;
@@ -52,3 +68,7 @@ io.on("connection", function (socket) {
 	});
 
 });
+
+function isValidBoardId(id) {
+	return idPattern.test(id);
+}
