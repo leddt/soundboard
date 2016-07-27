@@ -1,7 +1,9 @@
 (function() {
 
 	var sounds = {
-		"sound1": "nooo.mp3"
+		"nooo": "nooo.mp3",
+		"monsterkill": "monsterkill.mp3",
+		"assbag": "assbag.mp3",
 	};
 
 	for (var key in sounds) {
@@ -21,8 +23,11 @@
 	socket.on("play", function (sound) {
 		console.log("received sound " + sound);
 
-		if (sounds[sound]) {
-			sounds[sound].play();
+		var s = sounds[sound];
+		if (s) {
+			s.pause();
+			s.currentTime = 0;
+			s.play();
 		}
 	});
 
