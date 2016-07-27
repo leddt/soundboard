@@ -33,8 +33,9 @@ app.get("/:boardId/player", function (req, res) {
 	res.render("player", {board: req.params.boardId});
 });
 
-server.listen(3000, function() {
-	console.log("Listening on port 3000")
+var port = process.env.PORT || 3000;
+server.listen(port, function() {
+	console.log("Listening on port " + port)
 });
 
 
