@@ -4,6 +4,16 @@
 		"nooo": "nooo.mp3",
 		"monsterkill": "monsterkill.mp3",
 		"assbag": "assbag.mp3",
+		"trololo": "trololo.mp3",
+		"merovingian": "merovingian.mp3",
+		"rimshot": "rimshot.mp3",
+		"combobreaker": "combobreaker.mp3",
+		"ursofucked": "ursofucked.mp3",
+		"fart": "fart.mp3",
+		"mgsalert": "mgsalert.mp3",
+		"airhorn": "airhorn.mp3",
+		"shallnotpass": "shallnotpass.mp3",
+		"denied": "denied.mp3",
 	};
 
 	for (var key in sounds) {
