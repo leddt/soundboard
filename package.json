@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "watch": "nodemon index.js"
   },
   "author": "leddt",
   "license": "MIT",
@@ -12,5 +13,8 @@
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.0"
   }
 }
