@@ -11,5 +11,9 @@
 	<p>You can also click on the board ID to open a soundboard tab.
 </div>
 
+{{#each sounds}}
+	<audio id="{{id}}" src="/sounds/{{id}}.mp3" preload="auto"></audio>
+{{/each}}
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="/player.js"></script>

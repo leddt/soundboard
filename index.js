@@ -6,6 +6,8 @@ var app = express(),
 	server = http.createServer(app),
 	io = require("socket.io").listen(server);
 
+var sounds = require("./sounds");
+
 var boardIdChars = "BCDFGHJKLMNPQRSTVWXZ0123456789";
 var boardIdLength = 6;
 var idPattern = new RegExp("[" + boardIdChars + "]{" + boardIdLength + "}");
@@ -37,7 +39,10 @@ app.get("/:board", function (req, res) {
 		return;
 	}
 
-	res.render("board", {board: req.params.board});
+	res.render("board", {
+		board: req.params.board,
+		sounds: sounds
+	});
 });
 
 app.get("/:board/player", function (req, res) {
@@ -46,7 +51,10 @@ app.get("/:board/player", function (req, res) {
 		return;
 	}
 
-	res.render("player", {board: req.params.board});
+	res.render("player", {
+		board: req.params.board,
+		sounds: sounds
+	});
 });
 
 var port = process.env.PORT || 3000;

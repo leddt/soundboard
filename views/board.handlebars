@@ -13,19 +13,9 @@
 </div>
 
 <div id="sound-buttons">
-	<button type="button" data-sound="nooo" class="btn btn-default">Darth Vader Noooo</button>
-	<button type="button" data-sound="monsterkill" class="btn btn-default">M-M-Monster Kill</button>
-	<button type="button" data-sound="assbag" class="btn btn-default">Assbag</button>
-	<button type="button" data-sound="trololo" class="btn btn-default">Trololo</button>
-	<button type="button" data-sound="merovingian" class="btn btn-default">Merovingian swears</button>
-	<button type="button" data-sound="rimshot" class="btn btn-default">Rimshot</button>
-	<button type="button" data-sound="combobreaker" class="btn btn-default">C-C-Combo breaker</button>
-	<button type="button" data-sound="ursofucked" class="btn btn-default">U R So Fucked</button>
-	<button type="button" data-sound="fart" class="btn btn-default">Fart</button>
-	<button type="button" data-sound="mgsalert" class="btn btn-default">MGS Alert</button>
-	<button type="button" data-sound="airhorn" class="btn btn-default">Airhorn</button>
-	<button type="button" data-sound="shallnotpass" class="btn btn-default">You shall not pass</button>
-	<button type="button" data-sound="denied" class="btn btn-default">Denied</button>
+	{{#each sounds}}
+	<button type="button" data-sound="{{id}}" class="btn btn-default">{{name}}</button>
+	{{/each}}
 </div>
 
 <script src="/socket.io/socket.io.js"></script>

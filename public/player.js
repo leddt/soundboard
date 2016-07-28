@@ -1,26 +1,10 @@
 (function() {
 
-	var sounds = {
-		"nooo": "nooo.mp3",
-		"monsterkill": "monsterkill.mp3",
-		"assbag": "assbag.mp3",
-		"trololo": "trololo.mp3",
-		"merovingian": "merovingian.mp3",
-		"rimshot": "rimshot.mp3",
-		"combobreaker": "combobreaker.mp3",
-		"ursofucked": "ursofucked.mp3",
-		"fart": "fart.mp3",
-		"mgsalert": "mgsalert.mp3",
-		"airhorn": "airhorn.mp3",
-		"shallnotpass": "shallnotpass.mp3",
-		"denied": "denied.mp3",
-	};
+	var audioElements = document.querySelectorAll("audio");
+	var sounds = {};
 
-	for (var key in sounds) {
-	    if (sounds.hasOwnProperty(key)) {
-	        sounds[key] = new Audio("/sounds/" + sounds[key]);
-	    }
-	}
+	for (var i = 0; i < audioElements.length; i++)
+		sounds[audioElements[i].id] = audioElements[i];
 
 	var boardId = document.querySelector(".board-id-text").innerText;
 
