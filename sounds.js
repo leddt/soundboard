@@ -54,5 +54,8 @@ module.exports = [
 	{id:"yaunordiquiacrache", name:"Y a un ordi qui a craché!"},
 	{id:"youshallnotpass", name:"YOU SHALL NOT PASS!"},
 	{id:"youspinme", name:"You Spin Me!"},
-	{id:"zoidberg", name:"Zoidberg"}
+	{id:"zoidberg", name:"Zoidberg"},
+	{id:"howneatisthat", name:"How Neat Is That!?"},
+	{id:"thatsprettyneat", name:"That's Pretty Neat!"},
+	{id:"neatmusic", name:"Neat Music!"}
 ];
