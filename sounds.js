@@ -47,7 +47,7 @@ module.exports = [
 	{id:"trololo2", name:"Trololo 2"},
 	{id:"turndownforwhat", name:"Turn Down For What!"},
 	{id:"ursofucked", name:"U R SO FUCKED"},
-	{id:"yeahyeahyeahyeah" name:"Yeah yeah yeah yeeeaaahh"},
+	{id:"yeahyeahyeahyeah", name:"Yeah yeah yeah yeeeaaahh"},
 	{id:"vuvuzela", name:"Vuvuzela"},
 	{id:"wololo", name:"Wololo"},
 	{id:"wtfboom", name:"WTF BOOM!"},
