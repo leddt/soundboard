@@ -51,7 +51,7 @@ module.exports = [
 	{id:"wololo", name:"Wololo"},
 	{id:"wtfboom", name:"WTF BOOM!"},
 	{id:"xfiles", name:"X-Files"},
-	{id:"yaunordiquiacrache", name:"Y a un ordi qui a craché!"},
+	{id:"yaunordiquiacrache", name:"Y a un ordi qui a crachÃ©!"},
 	{id:"youshallnotpass", name:"YOU SHALL NOT PASS!"},
 	{id:"youspinme", name:"You Spin Me!"},
 	{id:"zoidberg", name:"Zoidberg"}
