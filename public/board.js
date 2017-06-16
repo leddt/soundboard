@@ -10,8 +10,9 @@
 
 	sounds.addEventListener("click", function (e) {
 		var sound = e.target.getAttribute("data-sound");
+		var stfu = e.target.getAttribute("data-stfu") === "true";
 		console.log("sending sound " + sound);
-		socket.emit("play", boardId, sound);
+		socket.emit("play", boardId, {sound, stfu});
 	});
 
 })();
