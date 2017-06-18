@@ -5,8 +5,6 @@
 
 	for (var i = 0; i < audioElements.length; i++)
 		sounds[audioElements[i].id] = audioElements[i];
-
-	stfu();
 	
 	var boardId = document.querySelector(".board-id-text").innerText;
 
@@ -14,6 +12,8 @@
 	socket.on("connect", function() {
 		console.log("connected");
 		socket.emit("player", boardId);
+		
+		stfu();
 	});
 
 	socket.on("play", function (message) {
