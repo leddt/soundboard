@@ -6,6 +6,8 @@
 	for (var i = 0; i < audioElements.length; i++)
 		sounds[audioElements[i].id] = audioElements[i];
 
+	stfu();
+	
 	var boardId = document.querySelector(".board-id-text").innerText;
 
 	var socket = io();
