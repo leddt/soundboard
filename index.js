@@ -70,9 +70,9 @@ io.on("connection", function (socket) {
 		console.log("Socket " + socket.id + " registered as player for board " + id);
 		socket.join(id);
 	});
-	socket.on("play", function(board, sound) {
-		console.log("Socket " + socket.id + " sent sound " + sound + " for board " + board);
-		io.to(board).emit("play", sound);
+	socket.on("play", function(board, message) {
+		console.log("Socket " + socket.id + " sent sound " + message.sound + " for board " + board);
+		io.to(board).emit("play", message);
 	});
 
 });
