@@ -12,29 +12,28 @@
 	socket.on("connect", function() {
 		console.log("connected");
 		socket.emit("player", boardId);
-		
-		stfu();
 	});
 
 	socket.on("play", function (message) {
 		console.log("received sound " + message.sound);
-
-		if (message.stfu) {
-			stfu();
-		}
 
 		var s = sounds[message.sound];
 		if (s) {
 			s.pause();
 			s.currentTime = 0;
 			s.play();
+
+			if (message.stfu) {
+				stfu(s);
+			}
 		}
 	});
 
 
-	function stfu() {
+	function stfu(currentSound) {
 		for (var key in sounds) {
 			var s = sounds[key];
+			if (s === currentSound) continue;
 			s.pause();
 			s.currentTime = 0;
 		}
