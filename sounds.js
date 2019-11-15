@@ -17,7 +17,7 @@ module.exports = [
 	{id:"fucker", name:"Fucker"},
 	{id:"gay", name:"Gay"},
 	{id:"gayvictory", name:"Gay Victory"},
-	{id:"goat", name:"Goat!"},
+	{id:"goat", name:"Goat! (Baptiste)"},
 	{id:"headshot", name:"Headshot"},
 	{id:"hellno", name:"Hell No!"},
 	{id:"inception", name:"Inception"},
